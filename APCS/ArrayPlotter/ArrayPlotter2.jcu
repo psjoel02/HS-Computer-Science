@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace_user>
+	<open_files>
+		<docitem>
+			<path>ArrayPlotter.java</path>
+			<source>true</source>
+			<index>0</index>
+			<active>true</active>
+		</docitem>
+		<docitem>
+			<path>gridworld.jar</path>
+			<source>true</source>
+			<index>1</index>
+			<active>false</active>
+		</docitem>
+		<docitem>
+			<path>gridgridworld.jar</path>
+			<source>true</source>
+			<index>2</index>
+			<active>false</active>
+		</docitem>
+	</open_files>
+</workspace_user>
