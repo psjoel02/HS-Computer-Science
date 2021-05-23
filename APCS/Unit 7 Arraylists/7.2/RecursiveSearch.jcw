@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace>
+	<settings>
+		<label>RecursiveSearch</label>
+		<id>93</id>
+		<version>0</version>
+	</settings>
+	<users>
+		<user>
+			<path>RecursiveSearch.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>RecursiveSearch.jcp</path>
+		</project>
+	</projects>
+</workspace>

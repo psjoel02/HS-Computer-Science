@@ -1,0 +1,16 @@
+<?xml?>
+<workspace>
+	<settings>
+		<label>Books</label>
+	</settings>
+	<users>
+		<user>
+			<path>Books.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>Books.jcp</path>
+		</project>
+	</projects>
+</workspace>
