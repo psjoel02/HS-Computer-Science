@@ -1,0 +1,209 @@
+
+#title{
+    
+    font-size: 3.0em;
+    font-family:"Century Gothic";
+    color:seashell;
+}
+
+.button {
+    
+    font-size: 1.0em;
+    font-family:"Century Gothic";
+    width:382px;
+    height:380px;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    
+    margin-right:-5px;
+    animation-direction: alternate;
+
+}
+.button2 {
+
+    background-color: rgb(20, 104, 9);
+    font-family:"Century Gothic";
+    color: whitesmoke;
+    border: 2px solid #e7e7e7;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.25s; /* Safari */
+    transition-duration: 0.25s;
+}
+
+
+.button2:hover {
+
+    background-color:#9F99A0;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button3 {
+
+    background-color: rgb(156, 76, 11);
+    font-family:"Century Gothic";
+    color: whitesmoke;
+    border: 2px solid #e7e7e7;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.25s; /* Safari */
+    transition-duration: 0.25s;
+}
+
+.button3:hover {
+
+    background-color:#9F99A0;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button4 {
+
+    background-color: rgb(92, 8, 117);
+    font-family:"Century Gothic";
+    color: whitesmoke;
+    border: 2px solid #e7e7e7;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.25s; /* Safari */
+    transition-duration: 0.25s;
+}
+
+.button4:hover {
+
+    background-color:#9F99A0;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button:active {
+    transform: translateY(5px);
+    
+}
+
+.button:hover {
+
+    opacity: 1;
+    }
+
+.button:focus {
+
+    outline:0;
+}
+
+html { 
+
+     background: url(pug.jpg) no-repeat center center fixed; 
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+}
+body{
+
+    background: url(pug.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+}
+
+p{
+
+    font-family:"Century Gothic";
+    display:inline; 
+}
+
+#par{
+
+    font-size:1.5em;
+    color:seashell;
+    font-family:"Century Gothic";
+}
+
+.par{
+
+    font-size:1.5em;
+    color:seashell;
+    font-family:"Century Gothic";
+}
+
+h2{
+
+    color:seashell;
+    font-family:"Century Gothic";
+    display:inline; 
+}
+
+
+#hide1{
+
+cursor: not-allowed;
+}
+#hide2{
+    
+cursor: not-allowed;
+}
+#hide3{
+
+cursor: not-allowed;
+}
+#hide4{
+
+cursor: not-allowed;
+}
+#hide5{
+
+cursor: not-allowed;
+}
+#hide6{
+
+cursor: not-allowed;
+}
+#hide7{
+
+cursor: not-allowed;
+}
+#hide8{
+
+cursor: not-allowed;
+}
+#hide9{
+
+cursor: not-allowed;
+}
+
+#hide10{
+
+    cursor: not-allowed;
+}
+#hide11{
+
+    cursor: not-allowed;
+}
+#hide12{
+
+    cursor: not-allowed;
+}
+#hide13{
+
+    cursor: not-allowed;
+}
+#hide14{
+
+    cursor: not-allowed;
+}

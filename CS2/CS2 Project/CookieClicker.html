@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cookie Clicker</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="cookie.ico" type="image/x-icon">
+        <link rel="icon" href="cookie.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="CookieClicker.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        
+    </head>
+    <body>
+
+            <br>
+            <br> 
+            <br>
+
+            <div id ="title">Cookie Clicker</div><br><br>
+            <br>
+
+            <h2 id ="name2" class="par">Cookie Monster</h2><h2 class ="par">'s </h2><h2 id ="name3" class="par">Bakery</h2><br><br>
+            <br>
+            
+            <button style="background: url(cookie.png)" class ="button" onclick = "click2()" id="drag"><br></button>
+            
+            <br>
+            <br>
+          
+          <p id ="par">You have:</p><br>
+          <p id = "amount" class="par">0</p><br>
+          <p id = "par"> cookies</p><br><br><br>
+
+          <p id = "par">Total Cookies Produced:</p>
+          <p id ="totalc" class="par">0</p><br><br>
+          
+          <hr></hr>
+           <br>
+
+           <h2 class="par">Cookie Multipliers</h2><br><br>
+
+           <button onclick = "uno()" id="hide10"  class="button3">Cookies per Click X 1.05 (50)</button><br>
+           <p class = "par">Level:</p><p id ="lu" class = "par">0</p><br><br>
+
+           <button onclick = "dos()" id="hide11"   class="button3">Cookies per Click X 1.1 (100)</button><br>
+           <p class = "par">Level:</p><p id ="ld" class = "par">0</p><br><br>
+
+           <button onclick = "tres()" id="hide12"   class="button3">Cookies per Click X 1.15 (1000)</button><br>
+           <p class = "par">Level:</p><p id ="lt" class = "par">0</p><br><br>
+
+           <button onclick = "quatro()" id="hide13"   class="button3">Cookies per Click X 1.2 (10000)</button><br>
+           <p class = "par">Level:</p><p id ="lq" class = "par">0</p><br><br>
+
+           <button onclick = "cinco()"  id="hide14"  class="button3">Cookies per Click X 1.5 (10000000)</button><br>
+           <p class = "par">Level:</p><p id ="lc" class = "par">0</p><br><br>
+
+           <hr></hr>
+           <br>
+
+           <h2 class="par">AutoClickers</h2><br><br>
+
+           <button onclick = "autoclick()"  id="hide1" class="button2">NoobClicker α (50)</button><br>
+           <p class = "par">Level:</p><p id ="alpha" class = "par">0</p><br><br>
+
+           <button onclick = "autoclick2()" id="hide2" class="button2">AutoClicker β (10000)</button><br>
+           <p class = "par">Level:</p><p id ="beta" class = "par">0</p><br><br>
+
+           <button onclick = "autoclick3()" id="hide3" class="button2">HeroClicker γ (1000000)</button><br>
+           <p class = "par">Level:</p><p id ="gamma" class = "par">0</p><br><br>
+
+           <button onclick = "autoclick4()" id="hide4" class="button2">ProClicker θ (1000000000)</button><br>
+           <p class = "par">Level:</p><p id ="theta" class = "par">0</p><br><br>
+
+           <button onclick = "autoclick5()" id="hide5" class="button2">ArtisanClicker μ (100000000000)</button><br>
+           <p class = "par">Level:</p><p id ="mu" class = "par">0</p><br><br>
+
+           <button onclick = "autoclick6()" id="hide6" class="button2">MasterClicker λ (10000000000000)</button><br>
+           <p class = "par">Level:</p><p id ="lambda" class = "par">0</p><br><br>
+
+           <button onclick = "autoclick7()" id="hide7" class="button2">CookieDestroyer Σ (1000000000000000)</button><br>
+           <p class = "par">Level:</p><p id ="sigma" class = "par">0</p><br><br>
+
+           <button onclick = "autoclick8()" id="hide8" class="button2">CookieCreator Ω (100000000000000000)</button><br>
+           <p class = "par">Level:</p><p id ="omega" class = "par">0</p><br><br>
+
+           <button onclick = "autoclick9()" id="hide9" class="button2">??? (10000000000000000000000000000000000000000000000)</button><br>
+           <p class = "par">Level:</p><p id ="makehim" class = "par">0</p><br><br>
+
+           <hr></hr>
+           <br>
+
+           <h2 class="par">Settings</h2><br><br>
+
+           
+
+           <button onclick = "name2()" class ="button4">Change Bakery Name</button><br><br>
+
+           <button onclick = "name3()" class ="button4">Change Bakery Type</button><br><br>
+
+           <button onclick = "change2()" class ="button4">Change Background (Random)</button><br><br>
+
+           <button onclick = "reset()" class="button4">Reset Cookies<br></button><br><br>
+           
+           <a href="Form.html" class="button4">Rate Cookie Clicker<br></a><br><br><br><br>
+
+
+            
+            <script type = "text/javascript" src ="CookieClicker.js">
+
+            </script>
+
+    </body>
+</html>
