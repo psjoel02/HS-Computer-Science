@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>20_1_transitions</title>
+<style>
+div.container {
+      display:inline-block;
+    }
+
+#kitten1:hover{
+margin-right:15px;
+transform: translate(0, 300px);
+transition: transform 3s;
+transition-timing-function: ease;
+}
+#kitten2:hover{
+margin-right:15px;
+transform: rotate(360deg);
+transition: transform 4s;
+transition-timing-function: ease-in;
+}
+#kitten3:hover{
+margin-right:15px;
+transform: rotateY(360deg);
+transition: transform 5s;
+transition-timing-function: ease-out;
+}
+</style>
+</head> 
+<body> 
+<div class="container">
+<p id="kitten1"><img src="images/kitten.png" alt="kitten"></p>
+</div>
+<div class="container">
+<p id="kitten2"><img src="images/kitten.png" alt="kitten"></p>
+</div>
+<div class="container">
+<p id="kitten3"><img src="images/kitten.png" alt="kitten"></p>	
+</div>				
+</body> 
+</html> 

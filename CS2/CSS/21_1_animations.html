@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" type="text/css" href="21_1_animations.css">
+   <title>21_1_animations</title>
+<style>
+body {\
+   overflow:hidden;
+}
+
+.wrapper {
+     position: absolute;
+     left: 135px;
+     top: 0px;
+     width:  270px;
+     height: 135px;
+     animation: move 6s ease-in-out 0s infinite alternate;
+     -webkit-animation: move 6s ease-in-out 0s infinite alternate;
+}
+img {
+    position: absolute;
+    left: -135px;
+    top: 0px;
+    animation: rotate 6s linear 0s infinite alternate;
+    -webkit-animation: rotate 6s linear 0s infinite alternate;
+}
+
+@keyframes move {
+    0%   {left: 135px}
+    100% {left: 100%} 
+}
+@-webkit-keyframes rotate {
+   from {-webkit-transform: rotate(0deg); transform: rotate(0deg);}
+   to   {-webkit-transform: rotate(720deg); transform: rotate(720deg);} 
+}
+</style>
+</head>
+<body>
+   <div class="wrapper">
+       <img src="images/spongeBob.png">
+   </div>
+</body>
+</html>
