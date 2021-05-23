@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>12_1_game100</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #number {
+                font-size: 7.0em;
+                color: crimson;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            #turn {
+                font-size: 3.0em;
+                font-weight:bold;
+                color: green;
+                text-align: center;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+            
+            table tr td {
+                border: 0;
+                margin: 0;
+                padding: 0;
+            }
+            
+            button {
+                font-size: 2.5em;
+                width: 60px;
+                height: 50px;
+            }
+            
+            button:hover {
+                background-color: lightcyan;
+            }
+            
+            button:active {
+                background-color: crimson;
+            }
+            
+            #buttons {
+                width: 600px;
+                margin: auto;
+            }
+            
+            button.reset {
+                position: absolute;
+                margin: auto;
+                left:0;
+                right:0;
+                width: 150px;
+                font-size: 1.4em;
+                visibility: hidden;
+            }
+            
+            button.reset:hover {
+                background-color: lightyellow;
+            }
+            
+            button.reset:active {
+                background-color: lightseagreen;
+            }
+        </style>
+    </head>
+    <body>
+      <div id="number">0</div>
+      <div id="buttons">
+        <table>
+            <tr>
+                <td><button id="b1" onclick="selectNumber(1)">1</button></td>
+                <td><button id="b2" onclick="selectNumber(2)">2</button></td>
+                <td><button id="b3" onclick="selectNumber(3)">3</button></td>
+                <td><button id="b4" onclick="selectNumber(4)">4</button></td>
+                <td><button id="b5" onclick="selectNumber(5)">5</button></td>
+                <td><button id="b6" onclick="selectNumber(6)">6</button></td>
+                <td><button id="b7" onclick="selectNumber(7)">7</button></td>
+                <td><button id="b8" onclick="selectNumber(8)">8</button></td>
+                <td><button id="b9" onclick="selectNumber(9)">9</button></td>
+                <td><button id="b10" onclick="selectNumber(10)">10</button></td>
+            </tr>
+        </table>
+      </div>                 
+      <div id="turn">Player 1's turn</div>
+          <button class="reset" id="reset" onclick="initialize()">Play Again</button>
+          
+    <script>        
+        var total = 0;  // the number that is moving toward 100
+        var turn = 0;   // tracks players turn, 0 = player1 : 1 = player2
+        
+        function initialize()
+        {
+            enableButtons();
+            total = 0;
+            turn = 0;
+            document.getElementById("number").innerHTML = total;
+            document.getElementById("turn").style.color = "green";
+            if(turn == 0)
+            {
+            document.getElementById("turn").innerHTML = "Player 1's turn";
+            }
+            document.getElementById("reset").style.visibility = "visible";
+            document.getElementById("button").style.visibility = "visible";
+            enableButtons();
+        }
+        
+        // @param selection : the value of the button that was pressed.
+        //    For example, if button 5 was pressed the value of selection would equal 5
+        function selectNumber(selection)
+        {
+        turn++;
+        
+        total += selection;
+        document.getElementById("number").innerHTML = total;
+        
+         if(turn % 2 == 0 && total <= 99)
+         {
+            document.getElementById("turn").innerHTML = "Player 1's turn";
+            document.getElementById("turn").style.color = "green";
+         }
+         if(turn % 2 == 1 && total <= 99)
+         {
+            document.getElementById("turn").innerHTML = "Player 2's turn";
+            document.getElementById("turn").style.color = "blue";
+         }
+
+         if(total == 100)
+         {
+            disableButtons();
+            if(turn %2 == 0)
+              {
+              document.getElementById("turn").innerHTML = "Player 1 wins!";
+              document.getElementById("reset").style.visibility = "visible";
+              
+              }
+
+            if(turn %2 == 1)
+              {
+                document.getElementById("turn").innerHTML = "Player 2 wins!";
+                document.getElementById("reset").style.visibility = "visible";
+                
+              }
+         }
+
+         if(total > 100)
+         {
+            document.getElementById("turn").innerHTML = "You both lost."; 
+            disableButtons();
+            document.getElementById("reset").style.visibility = "visible";
+            
+         }
+            
+        }
+        
+        function disableButtons()
+        {
+            for(var i = 1; i <= 10; i++)
+            {
+                var id = "b"+i;
+                document.getElementById(id).disabled = true;
+            }
+        }
+        
+        function enableButtons()
+        {
+            for(var i = 1; i <= 10; i++)
+            {
+                var id = "b"+i;
+                document.getElementById(id).disabled = false;
+            }
+        }
+        
+    </script>
+    </body>
+</html>

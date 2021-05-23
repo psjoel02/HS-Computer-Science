@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2_2_operators</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div {
+                margin: 10px;
+                padding: 10px;
+                border: 2px solid blue;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="output1"></div>
+        <div id="output2"></div>
+        <div id="output3"></div>
+        <div id="output4"></div>
+        <script>
+        var num1 = 6;
+        var num2 = 9;
+        var sum = num1 + num2;
+        document.getElementById("output1").innerHTML = num1 + " + " + num2  + " = " + sum;
+        var str1 = "United"; 
+        var str2 = "States";
+        var str3 = str1 + " " + str2;
+        document.getElementById("output2").innerHTML = str3 += " of America";
+        
+        var num3 = 100;
+        var num4 = 500;
+        document.getElementById("output3").innerHTML = "Sum = " + num3 + num4;
+        document.getElementById("output4").innerHTML = "Sum = " + (num3 + num4);
+        </script>
+    </body>
+</html> 
+    

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>5_1_objects</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+            table th {
+                background: darkblue;
+                color: white;
+                border: 2px black solid;
+                font-size: 1.4em;
+                padding: 10px;
+            }
+            table td {
+                background: wheat;
+                color: darkblue;
+                border: 2px black solid;
+                font-size: 1.2em;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="output"></div>
+        <script>
+            var dog1 = {
+                name:"Maddie",
+                breed:"yellow lab",
+                gender:"female",
+                color:"white and tan",
+                };
+            var dog2 = {
+                name:"Wolf",  
+                breed:"german shepherd",
+                gender:"male",
+                color:"black and tan",
+                };
+                document.getElementById("output").innerHTML = 
+                "<table> <tr> <th>Name</th> <th>Breed</th> <th>Gender</th> <th>Color</th> </tr>" +
+                "<tr>" + "<td>" + dog1.name + "</td>" + "<td>" + dog1.breed + "</td>" + "<td>" + dog1.gender + "</td>" + "<td>" + dog1.color + "</td>" + "</tr>" +
+                "<tr>" + "<td>" + dog2.name + "</td>" + "<td>" + dog2.breed + "</td>" + "<td>" + dog2.gender + "</td>" + "<td>" + dog2.color + "</td>" + "</tr>"
+                 + "</table>";
+        </script>
+
+    </body>
+</html>          

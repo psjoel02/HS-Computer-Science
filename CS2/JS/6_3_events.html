@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>6_3_events</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            button {
+                padding: 5px;
+                margin: 5px;
+                font-size: 12px;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <button onclick = increase()>Increase</button>
+        <button onclick = decrease()>Decrease</button>
+        <p id ="font">This is a test. It is only a test.</p>
+        <script>
+            var x = 12;
+            
+            document.body.style.fontSize = y;
+            function increase(){
+                x += 12;
+                document.getElementById("font").style.fontSize = x+"px";
+            }
+            function decrease(){
+                x-= 12;
+                document.getElementById("font").style.fontSize =x+"px";
+            }
+        </script>
+
+    </body>
+</html>      

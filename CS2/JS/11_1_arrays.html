@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>11_1_arrays</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #output {
+                font-size: 5.0em;
+                color: blue;
+            }
+            button {
+                font-size: 1.4em;
+                font-family: consolas, sans-serif;   
+            }
+            #ranges {
+                font-size: 1.4em;
+                font-weight: bold;
+                width: 100px;
+                margin-right: 10px;
+            }
+            .numLabel {
+                font-size: 1.6em;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+          
+         
+          <button type="button" onClick="selectB()">Select Breakfast</button>
+        <br><br>
+      <div id="output"></div>
+    <script>        
+    var breakfast = ["Pop Tarts","Toaster Strudel","egg and bacon muffin","sausage biscuit","oatmeal","cinnamon rolls","cinnamon toast","frozen pancakes","frozen waffles","bagel","fruit"]; 
+        function selectB()
+        {
+var rand = Math.floor(Math.random() * 11);
+document.getElementById("output").innerHTML = "You have chosen " + breakfast[rand];
+        }
+    </script>
+    </body>
+</html>

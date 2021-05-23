@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9_1_random</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #output {
+                font-size: 5.0em;
+                color: blue;
+            }
+            button {
+                font-size: 1.4em;
+                font-family: consolas, sans-serif;   
+            }
+            #ranges {
+                font-size: 1.4em;
+                font-weight: bold;
+                width: 100px;
+                margin-right: 10px;
+            }
+            .numLabel {
+                font-size: 1.6em;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+          <span class="numLabel">range 1..</span> 
+          <select id="ranges">
+            <option value="10">10</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="1000">1000</option>
+            <option value="10000">10000</option>
+            <option value="1000000">1000000</option>
+          </select>
+          <button type="button" onClick="doRandom()">generate number</button>
+         
+        <br><br>
+      <div id="output"></div>
+    
+    <script>        
+        function doRandom()
+        {
+            var range = document.getElementById("ranges");
+            var selection = ranges.value;
+            var num = parseInt(selection) - 1;
+            var random = Math.random() * num + 1;
+            document.getElementById("output").innerHTML = Math.round(random);
+        }
+    </script>
+    </body>
+</html>

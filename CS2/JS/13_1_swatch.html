@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>13_1_swatch</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #swatch {
+                width: 448px;
+                height: 112px;
+                margin: auto;
+                margin-top: 25px;
+                border: 2px black solid;
+            }
+            
+            #container {
+               width: 760px;
+               height: 400px;
+               margin: auto;
+               margin-top: 10px;
+               border: 2px black solid;
+               box-shadow: 8px 8px 10px;
+               box-sizing: border-box;
+            }
+            
+            #textContainer {
+               width: 760px;
+               height: 100px;
+               margin: auto;
+               margin-top: 5px;
+               box-sizing: border-box;
+            }
+            
+            #preview {
+                width: 50%;
+                height: 100%;
+                padding: 0;
+                float: left;
+                border-right: 2px black solid;
+                box-sizing: border-box;
+            }
+            
+            #selected {
+                width: 50%;
+                height: 100%;
+                padding: 0;
+                float: left;
+                box-sizing: border-box;
+            }
+            
+            #previewValue {
+                float:left;
+                width: 300px;
+                height: 40px;
+                margin-top: 0px;
+                text-align: center;
+                font-family: "consolas";
+                font-size: 1.6em;
+                visibility: hidden;
+                box-sizing: border-box;
+            }
+            
+            #selectedValue {
+                float: left;
+                clear: right;
+                width: 300px;
+                height: 40px;
+                margin-top: 0px;
+                text-align: center;
+                font-family: "consolas";
+                font-size: 1.6em;
+                visibility: hidden;
+                box-sizing: border-box;
+            }
+            
+            .box {
+                float: left;
+                width: 12px;
+                height: 12px;
+                border: 1px black solid;
+            }          
+        </style>
+    </head>
+    <body>
+        <div id="swatch"></div>
+        <div id="textContainer">
+            <div style="float:left; margin:0; margin-left: 40px"><h2 style="text-align:center">Preview</h2><div id="previewValue"></div></div>
+            <div style="float:left; margin:0; margin-left: 70px"><h2 style="text-align:center">Selected</h2><div id="selectedValue"></div></div>
+        </div>
+        <div id="container">
+            <div id="preview"></div>
+            <div id="selected"></div>
+        </div>
+        <script>
+            var red = 0;
+            var green = 0;
+            var blue = 0;
+            var i;
+            // your code goes below this line
+            
+            
+                div.onmouseover = function(event)
+                {
+                    for(var i = 0; i < 256; i++)
+                        {
+                    bkcolor = event.target.style.backgroundColor;
+                    document.getElementById("previewValue").visibility = visible;
+                    document.getElementById("previewValue").style.backgroundColor = bkcolor;
+                    document.getElementById("preview").style.backgroundColor = bkcolor;
+                           
+                        }
+                    
+                };   
+            
+            
+
+
+
+
+            
+            
+            // returns a string representing a background color that has been changed by increasing
+            // its color value by an increment of 48
+            function makeBkColor()
+            {    
+                if(blue > 256)
+                {
+                    blue = 0;
+                    green += 48;
+                }
+                else if(green > 256)
+                {
+                    green = 0;
+                    red += 48;
+                }
+                else if(red > 256)
+                {
+                    red = 0;
+                }
+
+                blue += 48;
+                
+                return "background-color:rgb(" + red + "," + green + "," + blue + ")";
+            }
+        </script>
+    </body>
+</html>
+    

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Timer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1 {
+                text-align: center;
+                font-size: 5.0em;
+                text-shadow: 1px 2px 3px;
+            }
+            
+            #input {
+                width: 490px;
+                margin: auto;
+            }
+            
+            .label {
+                width: 140px;
+                padding: 10px;
+                padding-bottom: 2px;
+                font-size: 2.4em;
+                font-family: consolas, sans-serif;
+                float: left;
+                text-align: center;
+                text-shadow: 1px 2px 3px;
+            }
+            
+            .spinner {
+                margin: 2px;
+                padding: 10px;
+                border: 2px solid black;
+                width: 130px;
+                font-size: 3.0em;
+                font-family: consolas, sans-serif;
+                background-color: #EEE;
+                color: black;
+                border-radius: 25px;
+                text-align: center;
+                text-shadow: 1px 2px 3px;
+                box-shadow: 3px 3px 3px;
+            }
+            
+            #output {
+                font-size: 6.0em;
+                font-family: consolas, sans-serif;
+                background-color: #EEE;
+                color: black;
+                width: 750px;
+                margin: auto;
+                border: 3px black solid;
+                border-radius: 25px;
+                visibility: hidden;
+                box-shadow: 3px 3px 3px;
+                text-align: center;
+            }
+
+            #startbutton {
+                font-size: 1.8em;
+                height: 60px;
+                margin-top: 40px;
+                padding: 10px;
+                border-radius: 25px;
+                box-shadow: 4px 4px 4px;
+                text-shadow: 1px 1px 2px;
+            }
+            
+            #startbutton:hover, .spinner:hover {
+                background-color: lightgoldenrodyellow;
+            }
+            
+            #error {
+                color: darkred;
+                width: 400px;
+                font-size: 2.2em;
+                height: 40px;
+                margin: auto;
+                text-align: center;
+                visibility: hidden;
+            }
+            
+            button:focus, input:focus {
+                outline: 0;
+            }
+            
+            .clockLabels {
+                padding: 10px;
+                padding-right: 80px;
+                float:left;
+                font-size: x-large;
+                color: #888;
+            }           
+            
+        </style>
+    </head>
+    <body>
+        <h1>Countdown Timer</h1>
+        <div id="input">
+            <div class="label">Month</div>
+            <div class="label">Day</div>
+            <div class="label">Year</div>
+            <input class="spinner" id="month" type="number" value="1" min="1" max="12"  required>
+            <input class="spinner" id="day" type="number" value="1" min="1" max="31" required>
+            <input class="spinner" id="year" type="number" value="1" min="0" max="2050"  required>
+        </div>
+        <div style="width: 250px; margin: auto"><button id="startbutton" onclick="startCountDown()">Start Countdown</button></div>
+        <br><br>
+        <div id="error"></div>
+        <div id="output"></div>
+      
+        <script>
+            var clock;
+            var endtime;
+            var year;
+            var month;
+            var day;
+            var endtime;
+            var starttime = new Date().getFullYear();   // get current time
+            
+            document.getElementById("year").value = starttime;
+            document.getElementById("year").min = starttime;
+            
+            loadEndTime(); // read from file the last date entered
+            
+
+            function startCountDown()
+            {
+             
+                 document.getElementById("output").style.visibility = "visible";
+
+                 year = document.getElementById("year").value;
+                 month = document.getElementById("month").value - 1;  // javascript counts months starting
+                 day = document.getElementById("day").value;          // with 0. January = 0
+                 
+                 endtime = new Date(year, month, day);
+
+                // check for invalid endTime
+                if(Date.parse(new Date()) > endtime)
+                {
+                 document.getElementById("error").style.visibility = "visible";
+                 document.getElementById("output").style.visibility = "hidden";
+                 document.getElementById("error").innerHTML = "Oops! Invalid ending date.";
+                 return;
+                }
+
+                else{
+                    document.getElementById("error").style.visibility = "hidden";
+                }
+
+                storeEndTime();
+                initializeClock("output", endtime);
+                updateClock();
+
+                var timeinterval = setInterval(updateClock,1000);
+                 
+                
+            }
+            
+            function initializeInput(id, value)
+            {
+                document.getElementById(id).innerHTML = value;
+            }
+           
+            function initializeClock(id, endtime)
+            {
+                clock = document.getElementById(id);
+                timeinterval = setInterval(function()
+                {
+                    
+                    var t = getTimeRemaining(endtime);
+                    clock.innerHTML = displayClockLabels() + format(t);
+                    if(t.total<=0)
+                    {
+                      clearInterval(timeinterval);
+                    }
+                },1000);
+            }
+            
+            function displayClockLabels()
+            {
+                var labels = 
+                "<div class='clockLabels' style='margin-left: 105px'>days</div>" +
+                "<div class='clockLabels' style='padding-right: 71px'>hours</div>" +
+                "<div class='clockLabels' style='padding-right: 58px'>minutes</div>" +
+                "<div class='clockLabels' style='padding-right: 0px'>seconds</div>";
+        
+                return labels;
+            }
+            
+            function format(time)
+            {
+                var string="";
+                
+                string += time.days + ":";
+                
+                if(time.hours < 10)
+                    string += "0" + time.hours + ":";
+                else
+                    string += time.hours + ":";
+                
+                if(time.minutes < 10)
+                    string += "0" + time.minutes + ":";
+                else
+                    string += time.minutes + ":";
+                
+                if(time.seconds < 10)
+                    string += "0" + time.seconds;
+                else
+                    string += time.seconds;
+                
+                return string;
+            }
+
+            function getTimeRemaining(endtime)
+            {
+                var current = new Date();
+                var t = Date.parse(endtime) - Date.parse(current);
+                var seconds = Math.floor( (t/1000) % 60 );
+                var minutes = Math.floor( (t/1000/60) % 60 );
+                var hours = Math.floor( (t/(1000*60*60)) % 24 );
+                var days = Math.floor( t/(1000*60*60*24));
+
+                return {
+                  'total': t,
+                  'days': days,
+                  'hours': hours,
+                  'minutes': minutes,
+                  'seconds': seconds
+                };
+              }
+              
+              function updateClock()
+              {              
+                    var t = getTimeRemaining(endtime);
+                    clock.innerHTML = displayClockLabels() + format(t);
+                    if(t.total<=0)
+                    {
+                      clearInterval(timeinterval);
+                    }
+               }
+               
+               function storeEndTime()
+               {
+                   if(typeof(localStorage) !== "undefined") // browser supported?
+                   {
+                        localStorage.setItem("year", year);
+                        localStorage.setItem("month", month);
+                        localStorage.setItem("day", day);
+                   } 
+               }
+               
+               function loadEndTime()
+               {
+                   if(typeof(localStorage) !== "undefined") // browser supported?
+                   {
+                       if(localStorage.year)  // get endtime from data file
+                       {
+                           year = localStorage.getItem("year");
+                           month = localStorage.getItem("month");
+                           day = localStorage.getItem("day");
+                           monthAdjustment = parseInt(month) + 1;  // JS starts counting months at 0
+                           
+                           document.getElementById("year").value = year;
+                           document.getElementById("month").value = monthAdjustment;
+                           document.getElementById("day").value = day;
+                       }     
+                    } 
+               }
+        </script>
+    </body>
+</html>

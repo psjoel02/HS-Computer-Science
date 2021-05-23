@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>8-1 Numbers</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #output {
+                font-size: 5.0em;
+                color: blue;
+            }
+            button {
+                font-size: 1.4em;
+                font-family: consolas, sans-serif;
+                
+            }
+            .box {
+                font-size: 1.4em;
+                width: 150px;
+                margin-right: 10px;
+            }
+            .numLabel {
+                font-size: 1.6em;
+                font-weight: bold;
+            }        
+        </style>
+    </head>
+    <body>
+          <span class="numLabel">num1</span> 
+          <input type="text" class="box" id="num1">
+          <span class="numLabel">num2</span> 
+          <input type="text" class="box" id="num2">
+          <button type="button" onClick="doAdd()"> + </button>
+          <button type="button" onClick="doMultiple()"> * </button>
+          <button type="button" onClick="doSubtract()"> - </button>
+          <button type="button" onClick="doDivide()"> / </button>
+          <button type="button" onClick="doClear()"> C </button>
+          <br><br>
+          <div id="output"></div>
+    
+            <script>        
+                function doAdd()
+                {
+                    var  num1Box= document.getElementById("num1");
+                    var  num2Box= document.getElementById("num2");
+                    var text1 = num1Box.value;   // retrieve string from num1Box
+                    var text2 = num2Box.value;   // retrieve string from num2Box
+                    var num1 = parseInt(text1);  // convert string to integer
+                    var num2 = parseInt(text2);  // convert string to integer
+                    var ans = num1 + num2;       // add values together
+
+                    document.getElementById("output").innerHTML = text1 + " + " + text2 + " = " + ans;
+                }
+
+                function doSubtract()
+                {
+                    var  num1Box= document.getElementById("num1");
+                    var  num2Box= document.getElementById("num2");
+                    var text1 = num1Box.value;   // retrieve string from num1Box
+                    var text2 = num2Box.value;   // retrieve string from num2Box
+                    var num1 = parseInt(text1);  // convert string to integer
+                    var num2 = parseInt(text2);  // convert string to integer
+                    var ans = num1 - num2;       // add values together
+
+                    document.getElementById("output").innerHTML = text1 + " - " + text2 + " = " + ans;
+                }
+				
+				function doMultiple()
+                {
+                    var  num1Box= document.getElementById("num1");
+                    var  num2Box= document.getElementById("num2");
+                    var text1 = num1Box.value;   // retrieve string from num1Box
+                    var text2 = num2Box.value;   // retrieve string from num2Box
+                    var num1 = parseInt(text1);  // convert string to integer
+                    var num2 = parseInt(text2);  // convert string to integer
+                    var ans = num1 * num2;       // add values together
+
+                    document.getElementById("output").innerHTML = text1 + " x " + text2 + " = " + ans;
+                }
+
+                function doDivide()
+                {
+                    var  num1Box= document.getElementById("num1");
+                    var  num2Box= document.getElementById("num2");
+                    var text1 = num1Box.value;   // retrieve string from num1Box
+                    var text2 = num2Box.value;   // retrieve string from num2Box
+                    var num1 = parseInt(text1);  // convert string to integer
+                    var num2 = parseInt(text2);  // convert string to integer
+                    var ans = num1 / num2;       // add values together
+
+                    document.getElementById("output").innerHTML = text1 + " / " + text2 + " = " + ans;
+                }
+
+                function doClear()
+                {
+                    document.getElementById("num1").value = "";
+                    document.getElementById("num2").value = "";
+                    document.getElementById("output").innerHTML ="";
+                }
+            </script>
+    </body>
+</html>

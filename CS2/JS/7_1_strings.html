@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>7-1 Strings</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #output {
+                font-size: 5.0em;
+                color: blue;
+            }
+            button {
+                font-size: 1.4em;
+                font-family: consolas, sans-serif;
+                
+            }
+            #wordBox {
+                font-size: 1.4em;
+                width: 200px;
+            }
+            #wordLabel {
+                font-size: 1.6em;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <span id="wordLabel">Word:</span> 
+          <input type="text" id="wordBox" onkeypress="handleKeyPress(event)">
+          <button type="button" onClick="getLength()">StringLength</button>
+          <button type="button" onClick="toUpperCase()">Uppercase</button>
+          <button type="button" onClick="flip()">FlipLetters</button>
+          <button type="button" onClick="split()">Split</button>  
+
+        <br><br>
+      <div id="output"> </div>
+      
+    <script>
+        
+        function handleKeyPress(e)
+        {
+            if(e.keyCode === 13)
+            { 
+                getLength();
+            }
+        }
+        
+        function getLength()
+        {
+         var text = document.getElementById("wordBox").value;
+         var length = text.length;
+         document.getElementById("output").innerHTML = length;
+        }
+        
+        function toUpperCase()
+        {           
+         var text = document.getElementById("wordBox").value;
+         var upper = text.toUpperCase();
+         document.getElementById("output").innerHTML = upper;
+        } 
+        
+        function flip()
+        {           
+         var text = document.getElementById("wordBox").value; 
+         var first = text.substring(0,1);
+         var last = text.substring(text.length-1);
+         var middle = text.substring(1, text.length-1);
+         document.getElementById("output").innerHTML = last + middle + first;
+        }
+        
+        function split()
+        {
+         var text = document.getElementById("wordBox").value;
+         var first = text.substring(0, text.length/2);
+         var last = text.substring(text.length/2, text.length);
+         document.getElementById("output").innerHTML = first + "<br>" + last;
+         
+        }
+        
+    </script>
+    </body>
+</html>

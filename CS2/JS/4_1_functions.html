@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>4_1_functions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="output1"></div>
+        <div id="output2"></div>
+             
+        <script>            
+        function greeting(name)
+        {
+         return "Hi <span style=color:red>" + name + "</span>, how are you today? <br><br>"; 
+        }
+        function average(n1,n2,n3)
+        {
+            return(n1 + n2 + n3)/3;
+        }
+        document.getElementById("output1").innerHTML = greeting("Moe") + greeting("Larry") + greeting("Curly") + greeting("Shemp");
+
+        document.getElementById("output2").innerHTML = "Average = <span style=color:green>" + average(98, 85, 99) + "</span>" + "<br>";
+        document.getElementById("output2").innerHTML += "Average = <span style=color:green>" + average(73, 91, 88) + "</span>";
+        </script>
+    </body>
+</html>           
