@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head> 
+<title>16_1_classes</title>
+<style>
+div.code {
+   white-space: pre;
+   display: block;
+   font-family: consolas, san serif;
+   font-size: 20px;
+   border-style: solid;
+   border-color:chocolate;
+   background-color:cornsilk;
+   padding-left: 10px;
+   width: 600px;
+}
+</style>
+</head> 
+<body> 
+<h1>Java While Loop</h1>
+
+<p>Java while loops can be classified into two categories: counter-controlled loops and sentinel-controlled<br>loops.</p>
+<h2>Counter-Controlled Loop</h2>
+<p></p>
+<p>A counter-controlled loop is a loop that repeats a predetermined number of times. The condition of<br> this type of loop is controlled by a counter variable. A counter is a variable that keeps count of the<br> number of times a loop is executed. Look at the following example of a counter-controlled loop.</p>
+<div class = "code">
+int counter = 1; 
+
+while(counter <= 10) 
+{ 
+System.out.println(counter); 
+counter++; 
+} 
+</div>
+<p></p>
+<h2>Sentinel-Controlled Loop</h2>
+<p></p>
+<p>A sentinel-controlled loop is a loop that executes an undetermined number of times. To stop the loop, a user<br> enters a value, called a sentinel, which causes the loop's condition to become false. Look at the following<br> example of a sentinel-controlled loop.
+<div class = "code">
+Scanner sc = new Scanner(System.in); 
+String ans = ""; 
+
+while(!ans.equals("stop")) 
+{ 
+ans = sc.nextLine(); 
+}
+</div>
+
+
+</body> 
+</html> 
